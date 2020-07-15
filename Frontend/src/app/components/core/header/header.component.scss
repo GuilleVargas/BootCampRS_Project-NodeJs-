@@ -1,0 +1,106 @@
+.globalHeader {
+    height: 95px;
+    width: 100%;    
+    top: 0;                       
+    background-color: white;
+    position: fixed;
+    z-index: 10;
+    box-shadow: 1px 2px 2px grey;
+  
+    .headerImage {
+      height: 85px;
+      width: 200px;
+      margin-left: 25px;
+      outline: none;
+      cursor: pointer;
+    }
+   
+  
+  .hamburger{
+    width: 20px;
+    height: 29px;
+  }
+  
+  #btn-menu{
+    display: none;
+  }
+  
+  .label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+  
+  .label:hover{
+    cursor: pointer;
+  }
+  
+  .menu ul{
+    margin-left: 10px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+  
+  .menu li a{
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  
+  @media (max-width:670px){
+    .label{
+      display: block;
+    }
+  
+    .menu{
+      position: absolute;
+      width: 40%;
+      background: #fff;
+      opacity: 0;
+      border: solid 1px black;
+    }
+  
+    .menu ul{
+      flex-direction: column;
+      margin-left: -25px;
+    }
+  
+  
+    #btn-menu:checked ~ .menu{
+      opacity: 1;
+    }
+  }
+  .btn-contact{
+    cursor: pointer;
+  }
+
+
+  .contact-info {
+    position: absolute;
+    right: 4px;
+    margin-top: 24px;
+    z-index: 2;
+    background-color: rgba(#fff,0.8);
+    padding: 12px;
+    border-radius: 8px; 
+    border: 1px solid;
+    transition: all .25s linear; 
+    box-shadow: 2px 4px 4px 2px grey;
+  }
+  
+.hide{
+  opacity: 0;
+}
+
+.fas{
+  margin-right: 6px ;
+  
+}
+  }
+  

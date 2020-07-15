@@ -1,0 +1,30 @@
+<div class="globalHeader">
+    <input type="checkbox" id="btn-menu" />
+    <label class="label" for="btn-menu">
+        <img class="hamburger" src="assets\open-menu.svg" title="hamburges" alt="Hamburger-icon" /></label>
+
+    <nav class="menu">
+        <ul>
+            <img class="headerImage" routerLink="/" src="\assets\hosp.png" />
+            <li>
+                <strong> <a routerLink="/users"><i class="fas fa-procedures"></i>Lista Pacientes</a></strong>
+            </li>
+
+            <li>
+                <strong> <a routerLink="/profesional"><i class="fas fa-user-md"></i>Lista Profesional</a></strong>
+            </li>
+        
+            <div class="contact-container">
+                <li>
+                   <strong> <a (click)="mostrar = !mostrar" class="btn-contact"><i class="fas fa-info-circle"></i>Información</a></strong>
+                </li>
+                <div [ngClass]="{ hide: mostrar }" class="contact-info">
+                    <p class="cont-nombre">Nombre: {{ contacto.nombre }}</p>
+                    <p class="cont-telefono">Teléfono: {{ contacto.telefono }}</p>
+                    <p class="cont-correo">Horario: {{ contacto.horario }}</p>
+                    <p class="cont-direccion">Dirección: {{ contacto.direccion }}</p>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</div>
