@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class HeaderComponent  {
 
   mostrar = true;
   
-  constructor(){}
+  constructor(public authService: AuthService){}
   
   contacto =  {
     nombre: 'Hospital Universitario de Torrejón',

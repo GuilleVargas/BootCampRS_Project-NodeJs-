@@ -7,12 +7,27 @@
         <ul>
             <img class="headerImage" routerLink="/" src="\assets\hosp.png" />
             <li>
-                <strong> <a routerLink="/users"><i class="fas fa-procedures"></i>Lista Pacientes</a></strong>
+                <strong> <a routerLink="/user"><i class="fas fa-procedures"></i>Lista Pacientes</a></strong>
             </li>
 
             <li>
-                <strong> <a routerLink="/profesional"><i class="fas fa-user-md"></i>Lista Profesional</a></strong>
+                <strong> <a routerLink="/profesional-list"><i class="fas fa-user-md"></i>Lista Profesional</a></strong>
             </li>
+
+            <li>
+                <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                    
+                        <strong><a class="add" routerLink="/profesional-list"><i class="fas fa-user"></i>Acceso Médicos</a></strong>
+                   
+                </ng-container>
+        
+                <ng-template #loggedIn>
+                    
+                        <strong><a class="btn-logout" (click)="authService.logout()"><i class="fas fa-times-circle"></i>Cerrar sesión</a></strong>
+                    
+                </ng-template>
+            </li>
+
         
             <div class="contact-container">
                 <li>
