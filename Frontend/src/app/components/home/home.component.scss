@@ -1,19 +1,19 @@
 .globalHome{
     width: 100%;
-    height: 90%;
+    background-color: cornsilk;;
 
     .slider {
         width: 100%;
-        height: 100% ;
+        height: 800px ;
         overflow: hidden;
+        margin-top: 96px;
       }
       
       .slider ul {
         display: flex;
         padding: 0;
         width: 400%;
-        
-        animation: cambio 20s infinite linear;
+        animation: cambio 14s infinite linear;
       }
       
       .slider li {
@@ -23,7 +23,7 @@
       
       .slider img {
         width: 100%;
-        height: 300pxpx;
+        height: 300px;
       }
       
       @keyframes cambio {
@@ -43,10 +43,30 @@
 
       #imagehosp1{
         width: 100%;
-        height: 84%;
+        height: 60%;
+      }
+      #imagehosp2{
+        width: 100%;
+        height: 60%;
       }
       #imagehosp3{
         width: 100%;
-        height: 84%;
+        height: 60%;
+      }
+      #imagehosp4{
+        width: 100%;
+        height: 60%;
+      }
+
+      .publicity{
+        width: 100%;
+        height: 360px;
+        margin-top: -356px;
+        padding-bottom: 10px;
+      
+        #imagecovid{
+          width: 100%;
+          height: 100%;
+        }
       }
     }
