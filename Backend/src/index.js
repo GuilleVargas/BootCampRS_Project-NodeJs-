@@ -8,6 +8,8 @@ const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 
+const { mongoose } = require("./database");
+
 //SETTINGS
 app.set("port", process.env.PORT || 3000);
 
@@ -20,7 +22,7 @@ app.use(morgan("dev"));
 app.use(express.json()); 
 app.use(cors({origin: 'http://localhost:4200'}));
 
-require("./database");
+
 
 
 /**
@@ -29,6 +31,9 @@ require("./database");
  * ? Ahora mismo sólo tenemos la de index.js
  */
 app.use( require("./routes/index"));
+app.use('/patient', require("./routes/patient.routes"));
+app.use('/profesional', require("./routes/profesional.routes"));
+
 
 //Inicio la aplicación 
 app.listen(app.get("port"), () => {
