@@ -2,7 +2,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const User = require('../models/patient');
+const User = require('../models/User');
 
 const jwt = require('jsonwebtoken');
 
@@ -17,8 +17,9 @@ router.post('/signup', async (req, res) => {
 
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
-
-    const user = await User.findOne({email});
+	console.log(email);
+	const user = await User.findOne({email});
+	console.log(user);
     if (!user) return res.status(401).send('The email doen\' exists');
     if (user.password !== password) return res.status(401).send('Wrong Password');
 
