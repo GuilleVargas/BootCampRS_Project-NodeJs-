@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {UserRoutingModule} from './user-routing.module';
+import { PatientListRoutingModule } from './patient-list-routing.module';
 
 
 
@@ -8,7 +8,7 @@ import {UserRoutingModule} from './user-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    UserRoutingModule
+    PatientListRoutingModule
   ]
 })
-export class UserModule { }
+export class PatientListModule { }

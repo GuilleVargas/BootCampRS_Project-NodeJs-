@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Profesional } from './../models/profesional';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProfesionalService } from '../../services/profesional.service';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-profesional-list',
@@ -9,7 +13,11 @@ export class ProfesionalListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  @Input() profesional: Profesional; 
+
+  ngOnInit() {
   }
+
+ 
 
 }

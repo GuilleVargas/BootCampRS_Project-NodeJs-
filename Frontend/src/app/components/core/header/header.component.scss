@@ -95,12 +95,16 @@
   }
   
 .hide{
-  opacity: 0;
+  display: none;
 }
 
 .fas{
   margin-right: 6px ;
   
+}
+
+.btn-logout{
+  cursor: pointer;
 }
   }
   

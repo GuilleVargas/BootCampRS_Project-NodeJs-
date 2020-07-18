@@ -1,0 +1,223 @@
+<div class="globalpatient">
+   
+
+  <form class="generalForm" novalidate (ngSubmit)="onSubmit()" [formGroup]="patient">
+   
+    
+  <mat-tab-group mat-stretch-tabs class="tab-list">
+    <mat-tab  label="Datos Personales"> 
+
+
+      <div class="personal-info">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nhc*</mat-label>
+        <input matInput formControlName="nhc">
+        <mat-hint>Máx 15 caracteres</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre*</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Primer Apellido*</mat-label>
+        <input matInput formControlName="surname">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Segundo Apellido</mat-label>
+        <input matInput formControlName="second_surname">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nif</mat-label>
+        <input matInput formControlName="nif">
+        <mat-hint>00000000X</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha</mat-label>
+        <input matInput formControlName="birth_date">
+        <mat-hint>dd/mm/aaaa</mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field class="gender">
+        <mat-label class="whatGender">Género</mat-label>
+        <mat-select [(value)]="selected" formControlName="gender">
+          <mat-option value="hombre">Hombre</mat-option>
+          <mat-option value="mujer">Mujer</mat-option>
+          <mat-option value="otro">Otro</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+   </mat-tab>
+    <mat-tab label="Dirección"> Content 2 </mat-tab>
+    <mat-tab label="Aseguradora"> Content 3 </mat-tab>
+  </mat-tab-group>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #patientForm="ngForm" (ngSubmit)="onSubmit(patientForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="patientService.selectedPatient._id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="patientService.selectedPatient.nhc" placeholder="Introduce nhc" required>
+                    <label>Nhc :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="position" #name="ngModel" [(ngModel)]="patientService.selectedPatient.name" placeholder="Nombre">
+                    <label>Name :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="office" #name="ngModel" [(ngModel)]="patientService.selectedPatient.surname" placeholder="Apellido">
+                    <label>Surname :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>Número de portal :</label>
+                    <input type="text" name="salary" #name="ngModel" [(ngModel)]="patientService.selectedPatient.portal_number" placeholder="Portal">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(patientForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!patientForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Nhc</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let pat of patientService.patients">
+                      <td>{{pat.nhc}}</td>
+                      <td>{{pat.name}}</td>
+                      <td>{{pat.surname}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(pat)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(pat._id,patientForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div> -->
+  
+</div>

@@ -12,14 +12,18 @@ import { HomeComponent } from './components/home/home.component';
 import { InitComponent } from './components/init/init.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProfesionalListComponent } from './components/profesional-list/profesional-list.component';
-import { UserComponent } from './components/user/user.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,7 @@ import { UserComponent } from './components/user/user.component';
     HomeComponent,
     InitComponent,
     ProfesionalListComponent,
-    UserComponent
+    PatientListComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,10 @@ import { UserComponent } from './components/user/user.component';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [ 
     AuthGuard,{
