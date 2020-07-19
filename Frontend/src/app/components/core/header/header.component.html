@@ -11,8 +11,14 @@
             </li>
 
             <li>
+                <strong> <a routerLink="/patient-new"><i class="fas fa-plus"></i>Nuevo Paciente</a></strong>
+            </li>
+
+            <li>
                 <strong> <a routerLink="/profesional-list"><i class="fas fa-user-md"></i>Lista Profesional</a></strong>
             </li>
+
+            
 
             <li>
                 <ng-container *ngIf="!authService.loggedIn(); else loggedIn">

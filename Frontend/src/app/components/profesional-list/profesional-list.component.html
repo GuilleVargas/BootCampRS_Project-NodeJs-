@@ -1,3 +1,40 @@
-<div class="globalprofesional">
+
+
+
+  <div class="profesionals_list" >
+
+    <div class="titleprofesional"><strong>LISTA DE PROFESIONALES</strong></div>
+
+    <div class="tableprofesional">
+    <table class="responsive-table highlight">
+      <tr>
+        <th>Número de Colegiado</th>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>NIF</th>
+        <th>Calle</th>
+        <th>Ciudad</th>
+        <th>Código Postal</th>
+      </tr>
+      <tr *ngFor="let prf of profesionalService.profesional">
+        <td>{{prf.collegiate_number}}</td>
+        <td>{{prf.name}}</td>
+        <td>{{prf.surname}}</td>
+        <td>{{prf.nif}}</td>
+        <td>{{prf.street}}</td>
+        <td>{{prf.city}}</td>
+        <td>{{prf.postal_code}}</td>
+        <td>
+            <a class="action-btn" (click)="onDelete(prf._id)">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      
     
-</div>
+    </table>
+
+    
+    
+
+  </div>
