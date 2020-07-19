@@ -1,5 +1,4 @@
 const Profesional = require('../models/profesional');
-const profesional = require('../models/profesional');
 
 const profesionalCtrl = {};
 
