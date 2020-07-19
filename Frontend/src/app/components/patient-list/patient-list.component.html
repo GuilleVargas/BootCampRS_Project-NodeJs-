@@ -1,64 +1,165 @@
 <div class="globalpatient">
-   
 
-  <form class="generalForm" novalidate (ngSubmit)="onSubmit()" [formGroup]="patient">
-   
-    
-  <mat-tab-group mat-stretch-tabs class="tab-list">
-    <mat-tab  label="Datos Personales"> 
+  
+  <form class="generalForm" #patientF="ngForm" novalidate [formGroup]="patient">
 
 
-      <div class="personal-info">
-
-      <mat-form-field appearance="outline">
-        <mat-label>Nhc*</mat-label>
-        <input matInput formControlName="nhc">
-        <mat-hint>Máx 15 caracteres</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Nombre*</mat-label>
-        <input matInput formControlName="name">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Primer Apellido*</mat-label>
-        <input matInput formControlName="surname">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Segundo Apellido</mat-label>
-        <input matInput formControlName="second_surname">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Nif</mat-label>
-        <input matInput formControlName="nif">
-        <mat-hint>00000000X</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Fecha</mat-label>
-        <input matInput formControlName="birth_date">
-        <mat-hint>dd/mm/aaaa</mat-hint>
-      </mat-form-field>
+    <mat-tab-group mat-stretch-tabs class="tab-list">
+      <mat-tab label="Datos Personales">
 
 
-      <mat-form-field class="gender">
-        <mat-label class="whatGender">Género</mat-label>
-        <mat-select [(value)]="selected" formControlName="gender">
-          <mat-option value="hombre">Hombre</mat-option>
-          <mat-option value="mujer">Mujer</mat-option>
-          <mat-option value="otro">Otro</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <div class="personal-info">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nhc*</mat-label>
+            <input matInput formControlName="nhc">
+            <mat-hint>Máx 15 caracteres</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre*</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Primer Apellido*</mat-label>
+            <input matInput formControlName="surname">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Segundo Apellido</mat-label>
+            <input matInput formControlName="second_surname">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nif</mat-label>
+            <input matInput formControlName="nif">
+            <mat-hint>00000000X</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput formControlName="birth_date">
+            <mat-hint>dd/mm/aaaa</mat-hint>
+          </mat-form-field>
+
+
+          <mat-form-field class="gender">
+            <mat-label class="whatGender">Género</mat-label>
+            <mat-select [(value)]="selected" formControlName="gender">
+              <mat-option value="hombre">Hombre</mat-option>
+              <mat-option value="mujer">Mujer</mat-option>
+              <mat-option value="otro">Otro</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Dirección">
+        <div class="personal-info">
+
+          <mat-form-field class="street-width">
+            <mat-label>Calle</mat-label>
+            <textarea matInput formControlName="street"></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Número</mat-label>
+            <input matInput formControlName="portal_number">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Puerta</mat-label>
+            <input matInput formControlName="door">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Código Postal</mat-label>
+            <input matInput formControlName="postal_code" #postal_Code maxlength="5" placeholder="Ex. 94105" value="">
+            <mat-hint>{{postal_Code.value.length}} / 5</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <input matInput formControlName="city">
+          </mat-form-field>
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Aseguradora">
+        <div class="personal-info">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Número de Tarjeta</mat-label>
+            <input matInput formControlName="tarjet_number">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre Aseguradora</mat-label>
+            <input matInput formControlName="insurance_name">
+          </mat-form-field>
+
+          <mat-form-field class="insurance_type">
+            <mat-label class="whatType">Tipo de Seguro</mat-label>
+            <mat-select [(value)]="selected" formControlName="type_of_insurance">
+              <mat-option value="salud">Salud</mat-option>
+              <mat-option value="familiar">Familiar</mat-option>
+              <mat-option value="dental">Dental</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="btns">
+      <button mat-stroked-button type="submit" class="btns_form" color="primary" (click)="onSubmit(patient)">Añadir Paciente</button>
+      <button mat-stroked-button type="button" class="btns_form" color="primary" ><a href="#patients_list"> Lista Pacientes</a></button>
+      
     </div>
+  </form>
+  
+</div>
 
-   </mat-tab>
-    <mat-tab label="Dirección"> Content 2 </mat-tab>
-    <mat-tab label="Aseguradora"> Content 3 </mat-tab>
-  </mat-tab-group>
-</form>
+
+
+  <div class="patients_list" id="patients_list">
+
+    <h1 class="patient-title">PACIENTES</h1>
+
+    <table class="responsive-table highlight">
+      <tr>
+        <th>NHC</th>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>NIF</th>
+        <th>Calle</th>
+        <th>Ciudad</th>
+        <th>Código Postal</th>
+      </tr>
+      <tr *ngFor="let pat of patientService.patients">
+        <td>{{pat.nhc}}</td>
+        <td>{{pat.name}}</td>
+        <td>{{pat.surname}}</td>
+        <td>{{pat.nif}}</td>
+        <td>{{pat.street}}</td>
+        <td>{{pat.city}}</td>
+        <td>{{pat.postal_code}}</td>
+        <td>
+          <a class="action-btn" (click)="onEdit(pat)">
+            <i class="material-icons">edit</i>
+          </a>
+          <a class="action-btn" (click)="onDelete(pat._id,patientF)">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+      </tr>
+     
+    </table>
+
+    
+
+  </div>
+
+  
 
 
 
@@ -219,5 +320,4 @@
     </div>
   
   </div> -->
-  
-</div>
+

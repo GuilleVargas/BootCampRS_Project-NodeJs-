@@ -23,6 +23,8 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProfesionalListComponent } from './components/profesional-list/profesional-list.component';
 import { PatientListComponent } from './components/patient-list/patient-list.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { PatientListComponent } from './components/patient-list/patient-list.com
     HttpClientModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [ 
     AuthGuard,{
