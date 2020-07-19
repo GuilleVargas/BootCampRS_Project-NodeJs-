@@ -24,6 +24,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProfesionalListComponent } from './components/profesional-list/profesional-list.component';
 import { PatientListComponent } from './components/patient-list/patient-list.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PatientNewComponent } from './components/patient-new/patient-new.component';
 
 
 
@@ -37,7 +38,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     HomeComponent,
     InitComponent,
     ProfesionalListComponent,
-    PatientListComponent
+    PatientListComponent,
+    PatientNewComponent
   ],
   imports: [
     BrowserModule,

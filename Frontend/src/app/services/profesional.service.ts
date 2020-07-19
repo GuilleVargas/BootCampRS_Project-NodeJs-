@@ -13,23 +13,21 @@ export class ProfesionalService {
   
   readonly URL_API = 'http://localhost:3000/profesional';
 
-  constructor(private http: HttpClient) {
-    this.selectedProfesional = new Profesional();
+  constructor(private httpClient: HttpClient) {  }
+
+  postProfesional(prf: Profesional) {
+    return this.httpClient.post(this.URL_API, prf);
   }
 
-  postProfesional(profesional: Profesional) {
-    return this.http.post(this.URL_API, profesional);
+  getProfesionalList() {
+    return this.httpClient.get(this.URL_API);
   }
 
-  getProfesionals() {
-    return this.http.get(this.URL_API);
-  }
-
-  putProfesional(profesional: Profesional) {
-    return this.http.put(this.URL_API + `/${profesional._id}`, profesional);
+  putProfesional(prf: Profesional) {
+    return this.httpClient.put(this.URL_API + `/${prf._id}`, prf);
   }
 
   deleteProfesional(_id: string) {
-    return this.http.delete(this.URL_API + `/${_id}`);
+    return this.httpClient.delete(this.URL_API + `/${_id}`);
   }
 }
