@@ -40,5 +40,8 @@ npm run start
 
 _Que en mi caso, utilizo este comando ya que en el package.json he modificado el script añadiendo lo siguiente: "start": "nodemon src/index.js"_
 
+![ProyectoRS_NodeJs](https://user-images.githubusercontent.com/49915596/89034103-946ca980-d338-11ea-93f5-e298b2caf305.gif)
+
+
 
 Una vez realizado lo anterior ya está listo para ser consultado el proyecto en la dirección http://localhost:4200/, el cual se abrirá de forma automática gracias al "-o" del comando en Front.
